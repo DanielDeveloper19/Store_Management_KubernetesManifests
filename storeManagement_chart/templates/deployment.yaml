@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Store-management-deployment
+  name: store-management-deployment
   labels:
-    app: Store-management
+    app: store-management
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: Store-management
+      app: store-management
   template:
     metadata:
       labels:
-        app: Store-management
+        app: store-management
     spec:
       containers:
-        - name: Store-management
+        - name: store-management
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
