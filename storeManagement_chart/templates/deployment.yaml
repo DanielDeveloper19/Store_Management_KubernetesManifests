@@ -17,6 +17,24 @@ spec:
       containers:
         - name: store-management
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-credentials
+                  key: url 
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-credentials
+                  key: username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: rds-db-credentials
+                  key: password
+
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
