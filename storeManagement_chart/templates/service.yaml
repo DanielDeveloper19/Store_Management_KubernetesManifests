@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-management-service
+spec:
+  type: ClusterIP
+  selector:
+    app: store-management # Must match your Deployment labels
+  ports:
+    - port: 80
+      targetPort: 8080 # The port your Java app listens on
