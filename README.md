@@ -15,6 +15,11 @@ This repository is continuously monitored by **ArgoCD**.
 * **Self-Healing:** Any manual changes (drifts) made to the cluster are automatically overwritten to match this Git source of truth.
 * **Observability:** Integrated with **Prometheus and Grafana** for real-time monitoring of pod health and resource utilization.
 
+## 🚀 Deployment
+This application is part of a larger GitOps ecosystem. It is automatically deployed to an **AWS EKS** cluster whenever the `master` branch is updated.
+* **Orchestration:** https://github.com/DanielDeveloper19/Store_Management_Terraform_EKS_kubernetes_infra_AWS.git
+* | **💻 Business Logic** | Java Spring Boot Application | [Source Code Repo](https://github.com/DanielDeveloper19/store_management.git) 
+
 ## 📂 Repository Structure
 ```text
 .
