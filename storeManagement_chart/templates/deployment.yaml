@@ -44,13 +44,13 @@ spec:
           # Recommended for Java/Spring Boot apps
           livenessProbe:
             httpGet:
-              path: /actuator/health/liveness
-              port: http
-            initialDelaySeconds: 30
+              path: /api/v1/health
+              port: 8080  # Use the number to be safe
+            initialDelaySeconds: 40 # Increased slightly to give Spring Boot plenty of time
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /actuator/health/readiness
-              port: http
-            initialDelaySeconds: 30
+              path: /api/v1/health
+              port: 8080
+            initialDelaySeconds: 40
             periodSeconds: 10
