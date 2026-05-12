@@ -5,7 +5,7 @@ image:
   repository: ghcr.io/danieldeveloper19/store_management
   pullPolicy: IfNotPresent
   # The CI pipeline will automatically update this tag value
-  tag: "d0afb6f"
+  tag: "7c01745"
 
 service:
   type: ClusterIP
